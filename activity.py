@@ -128,6 +128,9 @@ class MazeActivity(activity.Activity):
         self._mode_button.connect('toggled', self._mode_button_cb)
         toolbar_box.toolbar.insert(self._mode_button, -1)
 
+        self._stop_watch = ToolButton('stopwatch')
+        toolbar_box.toolbar.insert(self._stop_watch, -1)
+
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
         separator.show()
@@ -137,6 +140,8 @@ class MazeActivity(activity.Activity):
         self.show_trail_button.set_active(True)
         self.show_trail_button.connect('toggled', self._toggled_show_trail_cb)
         toolbar_box.toolbar.insert(self.show_trail_button, -1)
+
+
 
         separator = Gtk.SeparatorToolItem()
         separator.props.draw = False
